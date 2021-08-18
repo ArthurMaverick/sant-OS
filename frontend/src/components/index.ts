@@ -1,3 +1,7 @@
 export * from './choiceList'
 export * from './header'
 export * from './swiper'
+export  * from './mainContainer'
+export * from './heading'
+export * from './dateDetails'
+export * from './postContainer'
