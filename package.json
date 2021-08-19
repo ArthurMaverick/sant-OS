@@ -31,6 +31,7 @@
     "lint-staged": "^11.1.2"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix"
+    "backend/*.{ts,tsx}": "eslint --cache --fix",
+    "frontend/*.{ts,tsx}": "eslint --cache --fix"
   }
 }
