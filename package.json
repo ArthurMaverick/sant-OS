@@ -1,0 +1,23 @@
+{
+  "name": "sant-os",
+  "version": "1.0.0",
+  "description": "![https://images.unsplash.com/photo-1536395268859-7cf1233a5d55?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb](https://images.unsplash.com/photo-1536395268859-7cf1233a5d55?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArthurMaverick/sant-OS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArthurMaverick/sant-OS/issues"
+  },
+  "homepage": "https://github.com/ArthurMaverick/sant-OS#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0"
+  }
+}
