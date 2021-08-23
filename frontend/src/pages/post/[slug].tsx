@@ -8,7 +8,7 @@ import {Post} from '../../container/post'
 export const DynamicPost = ({post}: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter()
   if(router.isFallback) return <div>pagina carregando...</div>
-  if(!post.title) return <div>pagina não existe</div>
+  if(!post.title) return <div>pagina nao existe</div>
 
   return <Post post={post}/>  
 }

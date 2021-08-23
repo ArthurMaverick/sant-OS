@@ -10,14 +10,14 @@ export default function Home({posts}: InferGetStaticPropsType<GetStaticProps>) {
     <>
       <Header/> {/*remove this from components*/}
       
-      <PostGalery  storageData={posts}/>
+      <PostGalery  data={posts}/>
 
     </>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getPosts('limit=100')
+  const posts = await getPosts('findposts/?limit=100')
   return {
     props: {
       posts: posts
