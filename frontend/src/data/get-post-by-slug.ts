@@ -3,7 +3,7 @@ import { markdownToHtml } from '../services/convertMDtoHTML'
 import {fetchJson} from '../services/fetch-json'
 
 export const getPostBySlug  = async (slug: string): Promise<any[]> => {
-  const url = `${GET_POST_BY_SLUG}/?${slug}`
+  const url = `${GET_POST_BY_SLUG}/?slug=${slug}`
   const posts = await fetchJson<any[]>(url)
   
   if(!posts.length) return posts

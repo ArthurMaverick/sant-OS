@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-   MainContainer,PostThumbnails
+  MainContainer, PostThumbnails
 } from '../../components';
 
 type DataProps = {

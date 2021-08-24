@@ -1,25 +1,44 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { postsCounter } from '../../data/count-all-posts';
 import { getPosts } from '../../data/get-all-posts';
 import { getPostBySlug } from '../../data/get-post-by-slug';
 import {Post} from '../../container/post'
-export const DynamicPost = ({post}: InferGetStaticPropsType<typeof getStaticProps>) => {
+import Head from 'next/head';
+import { Header } from '../../components';
+
+ const DynamicPost = ({post}: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter()
   if(router.isFallback) return <div>pagina carregando...</div>
   if(!post.title) return <div>pagina nao existe</div>
 
-  return <Post post={post}/>  
+  return (
+    <>
+      <Head>
+        <title>{post.title}</title>
+        <meta name="sant-OS" content={post.title} />
+      </Head>
+
+      <Header />
+      
+      <Post post={post}/>
+    </>
+  ) 
 }
+
+export default DynamicPost
 export const getStaticPaths: GetStaticPaths = async () => {
-  const numberOfPosts = await postsCounter() //after limit is optional remove this
-  const posts = await getPosts(`limit=${numberOfPosts}`)
+  
+  const posts = await getPosts(`findposts/?limit=100`)
+  
   return {
     paths: posts.map(post=> {
-      return {
-        params: post.slug
+      const params = {
+        slug: post.slug
       }
+      return {
+        params
+       }
     }),
     fallback: true
   }
@@ -27,7 +46,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (ctx: GetStaticPropsContext<any> ) => {
   const posts = await getPostBySlug(ctx.params.slug)
-  const post = posts.length > 0 ? posts[0] : {}
+  const post = posts
   return {
     props: {
       post: post
