@@ -10,8 +10,8 @@ export const PostThumbnails = ({ storageData }: DataProps) => (
       <Container>
         {storageData.map((post) => (
           <div  key={post.slug} className="content">
+              <p>{post.categories[0]} </p> 
 
-           
               <img src={'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg'}/>
             
 
@@ -19,7 +19,7 @@ export const PostThumbnails = ({ storageData }: DataProps) => (
               <Link href={`/post/${encodeURIComponent(post.slug)}`} as={`/post/${post.slug}` } passHref>
                   <a>{post.title}</a>
               </Link>
-                <p>{post.categories[0]} </p>  
+                 
             </div>
              
            
