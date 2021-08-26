@@ -24,10 +24,11 @@ export const SendForm = () => {
     }
     };
     
-  setRes(await fetchJson(CREATE_ARTICLES, option).then(data => JSON.stringify(data)));
+  setRes(await fetchJson(CREATE_ARTICLES, option).then(data => JSON.stringify(data))); // params it'll change
 
   }
   
+  // some labels will to change to a generic and personalized mode
   return (
     <Container>
         <form onSubmit={handleSubmit}>
