@@ -3,8 +3,7 @@ import {theme } from '../../styles'
 type Theme = typeof theme
 
 export const HeaderContainer = styled.header`
-
-  width: 100vw;
+  width: 100%;
   height: 50px;
   background: ${({theme: Theme})=> theme.background};
   display: flexbox;
