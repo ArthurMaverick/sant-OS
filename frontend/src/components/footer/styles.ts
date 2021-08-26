@@ -7,6 +7,7 @@ export const Container = styled.div`
   color: white;
   background: #484848;
   padding: 10px 0;
+  margin-top: auto;
 
   .perfil img{
     width: 110px;
