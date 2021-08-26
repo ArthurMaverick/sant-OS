@@ -6,6 +6,7 @@ export const Container = styled.div`
   padding: 20px;
 
   max-width: 100vw;
+  min-height: 100vh;
   margin: 0 auto;
  
   

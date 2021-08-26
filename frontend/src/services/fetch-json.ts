@@ -1,5 +1,6 @@
-export const fetchJson = async <T>(url: string): Promise<T> => {
-  const data = await fetch(url)
-  const dataformated = await data.json()
+export const fetchJson = async(url: string, option?: RequestInit ): Promise<Response> => {
+  const data = await fetch(url, option);
+  const dataformated = await data.json();
   return dataformated
 }
+
